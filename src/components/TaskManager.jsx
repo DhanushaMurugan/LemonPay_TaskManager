@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PlusIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, CheckIcon } from "@heroicons/react/24/outline";
 
 function TaskManager() {
   
@@ -47,20 +47,19 @@ function TaskManager() {
 
   return (
     <div>
-      <div className="p-4 font-nunito ml-20">
+      <div className="p-4 font-nunito ml-2">
         <div className="flex justify-between mb-2">
           <div>
             <h1 className="text-2xl text-blue-800 text-bold text-left">
               Tasks Management
             </h1>
           </div>
-
-          <div className="mt-10 mr-28">
+          <div className="mt-10">
             <button
               onClick={handleAddTask}
-              className="bg-blue-500 text-white px-4 py-2 rounded-full mb-4 flex item-center text-right font-semibold bg-blue-800"
+              className="bg-blue-500 text-white px-3 py-3 w-32 rounded-full mb-4 flex item-center text-right font-semibold bg-blue-800"
             >
-              <PlusIcon className="h-5 w-5 text-white mr-2 stroke-2  " />
+              <PlusIcon className="h-6 w-5 text-white mr-2 stroke-2"/>
               Add Task
             </button>
           </div>
@@ -69,11 +68,11 @@ function TaskManager() {
         <table className="table-auto w-full border-collapse mb-56 text-m  text-left">
           <thead>
             <tr>
-              <th className="font-semibold text-blue-800  px-4 py-2">No</th>
-              <th className="font-semibold text-blue-800  px-4 py-2">Date & Time</th>
-              <th className=" font-semibold text-blue-800  px-4 py-2">Task</th>
-              <th className="font-semibold text-blue-800  px-4 py-2">Description</th>
-              <th className="font-semibold text-blue-800 px-4 py-2">Action</th>
+              <th className="font-semibold text-blue-800  px-4 py-2 w-[20px]">No</th>
+              <th className="font-semibold text-blue-800  px-4 py-2 w-[180px]">Date & Time</th>
+              <th className=" font-semibold text-blue-800  px-4 py-2 w-[200px]">Task</th>
+              <th className="font-semibold text-blue-800  px-4 py-2 w-[600px]">Description</th>
+              <th className="font-semibold text-blue-800 px-4 py-2 w-[20px]">Action</th>
             </tr>
           </thead>
           <tbody className="mt-8 w-46 border-collapse border">
@@ -83,7 +82,7 @@ function TaskManager() {
                 <td className="font-nunito shadow-md px-4 py-2">{task.date}</td>
                 <td className="font-nunito shadow-md px-4 py-2">{task.taskName}</td>
                 <td className="font-nunito shadow-md px-4 py-2">{task.description}</td>
-                <td className="font-nunito shadow-md px-4 py-2">
+                <td className="font-nunito shadow-md px-4 py-2 pt-4 pb-4">
                   {/* 3 Dots Button */}
                   <button
                     onClick={() => toggleMenu(index)}
@@ -94,21 +93,22 @@ function TaskManager() {
                   {/* Conditional Render for Edit and Delete */}
                   {visibleMenuIndex === index && (
                     <div className="absolute right-0 mt-2 bg-white shadow-md rounded p-2 mr-16 z-10">
-                      <button
+                      <div className="flex align-center">
+                        <div><CheckIcon class="h-5 w-5 text-gray-500 pt-1" /></div>
+                      <div><button
                         onClick={() => handleEditTask(index)}
-                        className="block text-blue-500 mb-2"
+                        className="block text-black mb-2"
                       >
                         Edit
-                      </button>
+                      </button></div></div>
                       <button
                         onClick={() => handleDeleteTask(index)}
-                        className="block text-red-500"
+                        className="block text-black pl-5"
                       >
                         Delete
                       </button>
                     </div>
                   )}
-                  
                 </td>
               </tr>
             ))}
@@ -164,8 +164,6 @@ function TaskManager() {
           </div>
         </div>
       )}
-
-        
       </div>
     </div>
   );

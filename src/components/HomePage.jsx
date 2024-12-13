@@ -22,7 +22,6 @@ function HomePage() {
                 Lemonpay!
               </h1>
             </div>
-
             <div className=" font-nunito text-white mr-28">
               {/* <Login /> */}
               <Signup />
