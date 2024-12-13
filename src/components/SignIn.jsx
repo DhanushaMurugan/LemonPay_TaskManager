@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
 import { StopIcon } from "@heroicons/react/24/outline";
 
-const Signup = () => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignup = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
     // Store mock user in localStorage
     localStorage.setItem("user", JSON.stringify({ email, password }));
@@ -21,7 +20,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen text-left w-96">
-      <form onSubmit={handleSignup} className="p-8 w-96">
+      <form onSubmit={handleSignIn} className="p-8 w-96">
         <h2 className="text-3xl mb-4">Welcome Login System</h2>
         <p className="text-l mb-4">
           Your gateway to seamless <br></br>transactions and easy payments.
@@ -75,4 +74,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignIn;

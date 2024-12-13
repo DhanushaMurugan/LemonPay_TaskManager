@@ -1,7 +1,6 @@
 import React from "react";
 import logoImg from "../image/lemonpay-logo.png";
-// import Login from "./Login";
-import Signup from "./Signup";
+import SignIn from "./SignIn";
 import TaskManager from "./TaskManager";
 
 function HomePage() {
@@ -24,7 +23,7 @@ function HomePage() {
             </div>
             <div className=" font-nunito text-white mr-28">
               {/* <Login /> */}
-              <Signup />
+              <SignIn />
             </div>
           </div>
         </div>
