@@ -21,6 +21,10 @@ function TaskManager() {
   };
 
   const handleSaveTask = () => {
+    if (!taskDetails.taskName|| !taskDetails.date) {
+      alert("Required: Please make sure to fill in both 'Task Name' & 'Date' fields..");
+      return;
+    }
     if (editIndex !== null) {
       const updatedTasks = [...tasks];
       updatedTasks[editIndex] = taskDetails;
