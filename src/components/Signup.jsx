@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { StopIcon } from "@heroicons/react/24/outline";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
     // Store mock user in localStorage
     localStorage.setItem("user", JSON.stringify({ email, password }));
-    navigate("/login");
+    setEmail("");
+    setPassword("");
+
+    const taskManagementSection = document.getElementById("task-management");
+    if (taskManagementSection) {
+      taskManagementSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -21,8 +26,10 @@ const Signup = () => {
         <p className="text-l mb-4">
           Your gateway to seamless <br></br>transactions and easy payments.
         </p>
-       <div className="mb-2"><label>Email</label></div>
-        
+        <div className="mb-2">
+          <label>Email</label>
+        </div>
+
         <input
           type="email"
           placeholder="mahadev@lemonpay.tech"
@@ -31,8 +38,10 @@ const Signup = () => {
           required
           className="w-full p-2 mb-4 border border-gray-300 bg-customPurple  text-black rounded"
         />
-        <div  className="mb-2"><label>Password</label></div>
-        
+        <div className="mb-2">
+          <label>Password</label>
+        </div>
+
         <input
           type="password"
           placeholder="Min 8 characters"
@@ -43,10 +52,13 @@ const Signup = () => {
         />
         <div className="flex justify-between mb-6">
           <div className="flex items-center">
-            <div><StopIcon class="h-6 w-6 text-white" /></div>
-          <div> <p>Remember me</p></div>
-
-           
+            <div>
+              <StopIcon class="h-6 w-6 text-white" />
+            </div>
+            <div>
+              {" "}
+              <p>Remember me</p>
+            </div>
           </div>
           <div>
             <p>Forget Password?</p>
