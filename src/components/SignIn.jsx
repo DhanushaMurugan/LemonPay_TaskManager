@@ -35,7 +35,7 @@ const SignIn = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full p-2 mb-4 border border-gray-300 bg-customPurple bg-indigo-200 text-black rounded"
+          className="w-full p-2 mb-4 border bg-indigo-200 text-black rounded"
         />
         <div className="mb-2">
           <label>Password</label>
@@ -47,7 +47,7 @@ const SignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full p-2 mb-2 border bg-white bg-indigo-200 text-black rounded"
+          className="w-full p-2 mb-2 border bg-indigo-200 text-black rounded"
         />
         <div className="flex justify-between mb-6">
           <div className="flex items-center">
