@@ -18,7 +18,7 @@ function HomePage() {
               />
               <h1 class=" text-white pt-52 pb-20 pl-8 w-2/3 font-nunito text-[40px] font-semibold leading-[57.6px] text-left underline-offset-[from-font] decoration-none ">
                 Join 8 Million Businesses{" "}
-                <span className="text-yellow-400">Powering Growth with</span>{" "}
+                <span className="text-yellow-200">Powering Growth with</span>{" "}
                 Lemonpay!
               </h1>
             </div>
