@@ -22,7 +22,7 @@ const SignIn = () => {
     <div className="flex justify-center items-center h-screen text-left w-96">
       <form onSubmit={handleSignIn} className="p-8 w-96">
         <h2 className="text-3xl mb-4">Welcome Login System</h2>
-        <p className="text-l mb-4">
+        <p className="text-xl mb-4">
           Your gateway to seamless <br></br>transactions and easy payments.
         </p>
         <div className="mb-2">
@@ -35,7 +35,7 @@ const SignIn = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full p-2 mb-4 border border-gray-300 bg-customPurple  text-black rounded"
+          className="w-full p-2 mb-4 border border-gray-300 bg-customPurple bg-indigo-200 text-black rounded"
         />
         <div className="mb-2">
           <label>Password</label>
@@ -47,7 +47,7 @@ const SignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full p-2 mb-2 border bg-white text-black rounded"
+          className="w-full p-2 mb-2 border bg-white bg-indigo-200 text-black rounded"
         />
         <div className="flex justify-between mb-6">
           <div className="flex items-center">
